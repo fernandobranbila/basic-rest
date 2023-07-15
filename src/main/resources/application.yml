@@ -1,0 +1,11 @@
+server:
+  port: ${SERVER_PORT:9011}
+
+spring:
+  jpa:
+    open-in-view: false
+    show-sql: true
+  datasource:
+    url: jdbc:postgresql://postgres:5432/basic-rest
+    username: postgres
+    password: 123456
