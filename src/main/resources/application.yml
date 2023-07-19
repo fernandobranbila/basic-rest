@@ -7,5 +7,7 @@ spring:
     show-sql: true
   datasource:
     url: jdbc:postgresql://postgres:5432/basic-rest
-    username: postgres
+    username: basic-rest
     password: 123456
+  profiles:
+    active: ${ACTIVE_PROFILE:default}

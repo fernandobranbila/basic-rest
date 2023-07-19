@@ -8,17 +8,29 @@ services:
     environment:
       POSTGRES_PASSWORD: '123456'
       POSTGRES_USER: 'basic-rest'
+      REDIS_HOST: redis
+      REDIS_PORT: 6379
     ports:
-      - 9011:9011
+      - "9011:9011"
     depends_on:
       - db
+      - redis
+    links:
+      - "redis"
 
   db:
     container_name: postgres
     image: postgres:latest
     restart: always
     ports:
-      - 5432:5432
+      - "5432:5432"
     environment:
       POSTGRES_USER: 'basic-rest'
       POSTGRES_PASSWORD: '123456'
+
+  redis:
+    image: redis:latest
+    restart: always
+    ports:
+      - "6379:6379"
+    command: ["redis-server", "--bind", "redis", "--port", "6379"]
