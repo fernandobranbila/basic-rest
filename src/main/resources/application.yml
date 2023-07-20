@@ -11,3 +11,10 @@ spring:
     password: 123456
   profiles:
     active: ${ACTIVE_PROFILE:default}
+
+springdoc:
+  api-docs:
+    path: /api-docs
+  swagger-ui:
+    enabled: 'true'
+    path: /swagger-ui.html

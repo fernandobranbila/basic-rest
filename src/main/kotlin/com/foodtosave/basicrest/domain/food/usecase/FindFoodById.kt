@@ -12,7 +12,7 @@ private val findFoodByIdOutbound: FindFoodByIdOutbound
 ): FindFoodByIdInbound {
 
     override fun execute(foodId: Long): Result<Food, Exception> {
-        Thread.sleep(10000)
+        Thread.sleep(1000)
         return findFoodByIdOutbound.execute(foodId)
     }
 
